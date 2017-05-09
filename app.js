@@ -1,6 +1,5 @@
-var app = angular.model('ourApp', {});
-
-app.component('navBar', {
+angular.module('ourApp', [])
+  .component('navBar', {
   template: `
     <nav class="navbar navbar-default">
       <div class="container-fluid">
@@ -25,15 +24,17 @@ app.component('navBar', {
         </div>
       </div>
     </nav>
-  `
+  `,
 })
 
-app.comonent('theForm', {
+
+.component('theform', {
   template: `
     <p>Enter your name: <input type="text" ng-model="name"></p>
     <p>Hello: {{name}}</p>
-  `
+  `,
   controller: function() {
-    var vm = this;
-  }
-})
+  var vm = this;
+},
+controllerAs: "vm"
+ })
